@@ -20,6 +20,9 @@ import com.bank.trade.dto.Trade;
 import com.bank.trade.response.TradeResponse;
 import com.bank.trade.service.ValidationServiceImpl;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  *
  * @author caydogdu
@@ -27,6 +30,7 @@ import com.bank.trade.service.ValidationServiceImpl;
  *         This is a controller for rest services
  */
 @Controller
+@Api(value = "trade-information")
 public class TradeController {
 
     private static final Logger logger = LoggerFactory.getLogger(TradeController.class);
@@ -39,6 +43,7 @@ public class TradeController {
      * @param List<Trade> to validate trades
      * @return Response<List<Trade>>
      */
+    @ApiOperation(value = "Validate trades", response = ResponseEntity.class)
     @RequestMapping(value = "/trades", method = RequestMethod.POST)
     @Consumes({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML })
     @Produces({ MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN, MediaType.APPLICATION_XML })
