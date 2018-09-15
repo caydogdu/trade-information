@@ -19,4 +19,8 @@ public final class CurrencyUtil {
         return ccy;
     }
 
+    private CurrencyUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
 }

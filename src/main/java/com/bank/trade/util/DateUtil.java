@@ -30,7 +30,7 @@ public final class DateUtil {
         }
     }
 
-    private static LocalDate parseDate(String date, DateTimeFormatter formatter) throws Exception {
+    private static LocalDate parseDate(String date, DateTimeFormatter formatter) {
         if (formatter == null) {
             return LocalDate.parse(date);
         }
@@ -57,6 +57,10 @@ public final class DateUtil {
 
         return null;
 
+    }
+
+    private DateUtil() {
+        throw new IllegalStateException("Utility class");
     }
 
 }

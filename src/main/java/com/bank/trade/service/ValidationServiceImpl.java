@@ -18,7 +18,7 @@ public class ValidationServiceImpl implements ValidationService {
     @SuppressWarnings("unchecked")
     @Override
     public List<Product> validateAll(List<? extends Product> products) {
-        products.forEach(pr -> pr.validate());
+        products.forEach(this::validate);
         return ((List<Product>) products);
     }
 
