@@ -5,10 +5,13 @@ This is a trade-information service by Cemil Aydogdu. https://github.com/caydogd
 
 These are the main ability of project
 
-    Ability to validate trades
+    Ability to validate trades (or other products)
 
 This project was developed with spring boot. Java 8 is required. No database was used.
 
+There is a Product interface in project, if you want new validatable products you can implement this interface.
+When you create a new Product implementation you must override validate() method. You can create new validators to validate.
+For example Trade class can use 3 validators (SpotValidator,ForwardValidator and VanillaOptionValidator) which extends TradeValidator
 
 There is a REST Service in this project.
 
@@ -28,6 +31,11 @@ There is a REST Service in this project.
         "trader":"Johann Baumfiddler"
       }
     ]
+
+To see metrics you can use http://localhost:8081/actuator/metrics/
+
+For online documentation of REST API http://localhost:8081/swagger-ui.html
+
 
 Run options and deployment
 
