@@ -31,12 +31,33 @@ There is a REST Service in this project.
         "trader":"Johann Baumfiddler"
       }
     ]
+    
+Response for the above request will be like this
+    
+    {
+        "success": true,
+        "result": [
+            {
+                "customer": "PLUTO1",
+                "ccyPair": "EURUSD",
+                "type": "Spot",
+                "direction": "BUY",
+                "tradeDate": "2016-0811",
+                "amount1": 1000000,
+                "amount2": 1120000,
+                "rate": 1.12,
+                "valueDate": "2016-08-15",
+                "premium": 0,
+                "legalEntity": "CS Zurich",
+                "trader": "Johann Baumfiddler",
+                "validationErrors": []
+            }
+        ]
+    }
 
 To see metrics you can use http://localhost:8081/actuator/metrics/
 
 For online documentation of REST API http://localhost:8081/swagger-ui.html
-
-------------------------------------------------------------------
 
 ## Run options and deployment
 
